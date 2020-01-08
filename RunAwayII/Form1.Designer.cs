@@ -190,10 +190,12 @@
             this.pause_game.TabIndex = 23;
             this.pause_game.Text = "I I";
             this.pause_game.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.pause_game.Click += new System.EventHandler(this.pause);
             // 
             // Falling
             // 
-            this.Falling.Interval = 10;
+            this.Falling.Enabled = true;
+            this.Falling.Interval = 40;
             this.Falling.Tick += new System.EventHandler(this.Falling_Tick);
             // 
             // Form1

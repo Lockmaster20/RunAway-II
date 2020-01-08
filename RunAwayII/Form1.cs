@@ -24,15 +24,6 @@ namespace RunAwayII
             this.Close();
         }
 
-        /*Movement erro = new Movement();
-        private void move(object sender, EventArgs e)
-        {
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                transform.position += Vector3.left * speed * Time.deltaTime;
-            }
-        }*/
-
         void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             int x = player_box.Location.X;
@@ -45,11 +36,42 @@ namespace RunAwayII
             player_box.Location = new Point(x, 890);
         }
 
+
+        /*private Movement M = new Movement();
+
+        private void mexe(object sender, EventArgs e)
+        {
+
+            M.recebe = enemy_1.Location.Y;
+
+            int y1 = M.v1;
+            enemy_1.Location = new Point(14, y1);
+        }
+
+
+        */
         private void Falling_Tick(object sender, EventArgs e)
         {
-            int e5 = enemy_5.Location.Y;
-            e5 -= 10;
-            enemy_5.Location = new Point(590, e5);
+            //int y1 = M.v1;
+            enemy_1.Location = new Point(14, text);
+        }
+
+        private Movement M;
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Movement M = new Movement(this);
+        }
+
+        public void test(string text)
+        {
+            score.Text = text;
+        }
+
+        private void pause(object sender, EventArgs e)
+        {
+            M = new Movement(this);
+            M.testexmaple();
         }
     }
 }

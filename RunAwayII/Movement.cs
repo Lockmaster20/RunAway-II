@@ -8,24 +8,24 @@ namespace RunAwayII
 {
     class Movement
     {
-        //144
-        private double mexe;
+        //private Random rnd = new Random();
 
-        public string input
+        //public int recebe;
+
+        RunAwayII.Form1 formed;
+        string why;
+
+        public Movement(Form1 formed)
         {
-            set
-            {
-                mexe = Convert.ToDouble(value) * Convert.ToDouble(value);
-            }
+            this.formed = formed;
         }
 
-        public string velocidade
+        public void testexmaple()
         {
-            get
-            {
-                return mexe.ToString();
-            }
-        }
+            why = "2";
 
+            formed.test(why);
+        }
     }
 }
+
