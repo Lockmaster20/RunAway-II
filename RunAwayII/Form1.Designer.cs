@@ -43,7 +43,7 @@
             this.taskbar = new System.Windows.Forms.PictureBox();
             this.score = new System.Windows.Forms.Label();
             this.pause_game = new System.Windows.Forms.Label();
-            this.Falling = new System.Windows.Forms.Timer(this.components);
+            this.speed1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.form_Closer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy_5)).BeginInit();
@@ -192,11 +192,11 @@
             this.pause_game.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.pause_game.Click += new System.EventHandler(this.pause);
             // 
-            // Falling
+            // speed1
             // 
-            this.Falling.Enabled = true;
-            this.Falling.Interval = 40;
-            this.Falling.Tick += new System.EventHandler(this.Falling_Tick);
+            this.speed1.Enabled = true;
+            this.speed1.Interval = 40;
+            this.speed1.Tick += new System.EventHandler(this.Speed1_Tick);
             // 
             // Form1
             // 
@@ -254,7 +254,7 @@
         private System.Windows.Forms.PictureBox taskbar;
         private System.Windows.Forms.Label score;
         private System.Windows.Forms.Label pause_game;
-        private System.Windows.Forms.Timer Falling;
+        private System.Windows.Forms.Timer speed1;
     }
 }
 

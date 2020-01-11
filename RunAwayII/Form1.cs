@@ -28,50 +28,29 @@ namespace RunAwayII
         {
             int x = player_box.Location.X;
 
-            if (e.KeyCode == Keys.Right) x += 144;
-            else if (e.KeyCode == Keys.Left) x -= 144;
+            if (e.KeyCode == Keys.Right && x < 1166) x += 144;
+            else if (e.KeyCode == Keys.Left && 14 < x) x -= 144;
 
             if (e.KeyCode == Keys.Escape) this.Close();
 
             player_box.Location = new Point(x, 890);
         }
 
+        private Movement M = new Movement();
 
-        /*private Movement M = new Movement();
-
-        private void mexe(object sender, EventArgs e)
-        {
-
-            M.recebe = enemy_1.Location.Y;
-
-            int y1 = M.v1;
-            enemy_1.Location = new Point(14, y1);
-        }
-
-
-        */
-        private void Falling_Tick(object sender, EventArgs e)
-        {
-            //int y1 = M.v1;
-            enemy_1.Location = new Point(14, text);
-        }
-
-        private Movement M;
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            Movement M = new Movement(this);
-        }
-
-        public void test(string text)
-        {
-            score.Text = text;
-        }
 
         private void pause(object sender, EventArgs e)
         {
-            M = new Movement(this);
-            M.testexmaple();
+            
+        }
+
+        private void Speed1_Tick(object sender, EventArgs e)
+        {
+            int y = enemy_1.Location.Y;
+            enemy_1.Location = new Point(14, y + 10);
+
+            M.y1 = y;
+            speed1.Interval = M.Spd_1; 
         }
     }
 }

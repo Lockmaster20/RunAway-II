@@ -8,23 +8,20 @@ namespace RunAwayII
 {
     class Movement
     {
-        //private Random rnd = new Random();
+        public Random rnd = new Random();
+        public int y1 = 12;
+        public int spd1 = 1;
 
-        //public int recebe;
-
-        RunAwayII.Form1 formed;
-        string why;
-
-        public Movement(Form1 formed)
+        public int Spd_1
         {
-            this.formed = formed;
-        }
-
-        public void testexmaple()
-        {
-            why = "2";
-
-            formed.test(why);
+            get
+            {
+                if (y1 < 500)
+                {
+                    spd1 = rnd.Next(10, 30);
+                }
+                return spd1;
+            }
         }
     }
 }
