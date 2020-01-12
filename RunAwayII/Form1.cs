@@ -23,7 +23,7 @@ namespace RunAwayII
             this.Close();
         }
 
-        void Form1_KeyDown(object sender, KeyEventArgs e)               //Movimento do jogador
+        void Form1_KeyDown(object sender, KeyEventArgs e)               
         {
             int x = player_box.Location.X;
             if (e.KeyCode == Keys.Escape) this.Close();
@@ -36,9 +36,9 @@ namespace RunAwayII
         }
 
         private Movement M = new Movement();
-        private int mov = 20;                                           //Quantidade de pixeis que o objeto anda
+        private int mov = 40;                                           
 
-        private void pause(object sender, EventArgs e)                  //Pausa
+        private void pause(object sender, EventArgs e)                  
         {
             if (speed1.Enabled == true) speed1.Enabled = false; else speed1.Enabled = true;
             if (speed2.Enabled == true) speed2.Enabled = false; else speed2.Enabled = true;
@@ -51,7 +51,7 @@ namespace RunAwayII
             if (speed9.Enabled == true) speed9.Enabled = false; else speed9.Enabled = true;
         }
 
-        private void Speed1_Tick(object sender, EventArgs e)            //Velocidade a que os objetos caem
+        private void Speed1_Tick(object sender, EventArgs e)            
         {
             int y = enemy_1.Location.Y;
             M.y1 = y;
