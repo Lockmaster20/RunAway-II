@@ -36,7 +36,18 @@ namespace RunAwayII
         }
 
         private Movement M = new Movement();
-        private int mov = 40;                                           
+
+        private void loose_Tick(object sender, EventArgs e)             //mudar código
+        {
+            int s = Convert.ToInt32(score.Text);
+            if (player_box.Bounds.IntersectsWith(enemy_1.Bounds)) 
+            {
+                s += 100;
+            }
+            score.Text = Convert.ToString(s);
+        }
+
+        private int mov = 50;                                           //f:20, m:35, d:50
 
         private void pause(object sender, EventArgs e)                  
         {
@@ -130,6 +141,6 @@ namespace RunAwayII
             speed9.Interval = M.Spd_9;
             enemy_9.Location = new Point(1166, y + mov);
             if (y > 890) enemy_9.Location = new Point(1166, 12);
-        }
+        }   
     }
 }

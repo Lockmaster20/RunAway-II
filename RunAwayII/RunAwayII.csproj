@@ -81,32 +81,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\RA_II_bg.png" />
+    <None Include="Resources\RA_II_player.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\RA_II_spl_enemy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RA_II_enemy1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RA_II_lppi_bg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RA_II_lppi_bg1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RA_II_bg1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RA_II_bg2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RA_II_bg3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RA_II_bg4.png" />
+    <None Include="Resources\RA_II_enemy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -53,6 +53,7 @@
             this.enemy_9 = new System.Windows.Forms.PictureBox();
             this.enemy_5 = new System.Windows.Forms.PictureBox();
             this.enemy_1 = new System.Windows.Forms.PictureBox();
+            this.loose = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.player_box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.form_Closer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskbar)).BeginInit();
@@ -149,6 +150,7 @@
             // player_box
             // 
             this.player_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(124)))), ((int)(((byte)(167)))));
+            this.player_box.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("player_box.BackgroundImage")));
             this.player_box.Location = new System.Drawing.Point(590, 890);
             this.player_box.Name = "player_box";
             this.player_box.Size = new System.Drawing.Size(100, 100);
@@ -265,6 +267,12 @@
             this.enemy_1.TabIndex = 1;
             this.enemy_1.TabStop = false;
             // 
+            // loose
+            // 
+            this.loose.Enabled = true;
+            this.loose.Interval = 1;
+            this.loose.Tick += new System.EventHandler(this.loose_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,6 +339,7 @@
         private System.Windows.Forms.Timer speed7;
         private System.Windows.Forms.Timer speed8;
         private System.Windows.Forms.Timer speed9;
+        private System.Windows.Forms.Timer loose;
     }
 }
 
