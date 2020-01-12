@@ -44,6 +44,14 @@
             this.score = new System.Windows.Forms.Label();
             this.pause_game = new System.Windows.Forms.Label();
             this.speed1 = new System.Windows.Forms.Timer(this.components);
+            this.speed2 = new System.Windows.Forms.Timer(this.components);
+            this.speed3 = new System.Windows.Forms.Timer(this.components);
+            this.speed4 = new System.Windows.Forms.Timer(this.components);
+            this.speed5 = new System.Windows.Forms.Timer(this.components);
+            this.speed6 = new System.Windows.Forms.Timer(this.components);
+            this.speed7 = new System.Windows.Forms.Timer(this.components);
+            this.speed8 = new System.Windows.Forms.Timer(this.components);
+            this.speed9 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.form_Closer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy_5)).BeginInit();
@@ -183,6 +191,7 @@
             // pause_game
             // 
             this.pause_game.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(112)))), ((int)(((byte)(123)))));
+            this.pause_game.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pause_game.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pause_game.Location = new System.Drawing.Point(590, 990);
             this.pause_game.Name = "pause_game";
@@ -195,8 +204,56 @@
             // speed1
             // 
             this.speed1.Enabled = true;
-            this.speed1.Interval = 40;
+            this.speed1.Interval = 1;
             this.speed1.Tick += new System.EventHandler(this.Speed1_Tick);
+            // 
+            // speed2
+            // 
+            this.speed2.Enabled = true;
+            this.speed2.Interval = 1;
+            this.speed2.Tick += new System.EventHandler(this.Speed2_Tick);
+            // 
+            // speed3
+            // 
+            this.speed3.Enabled = true;
+            this.speed3.Interval = 1;
+            this.speed3.Tick += new System.EventHandler(this.Speed3_Tick);
+            // 
+            // speed4
+            // 
+            this.speed4.Enabled = true;
+            this.speed4.Interval = 1;
+            this.speed4.Tick += new System.EventHandler(this.Speed4_Tick);
+            // 
+            // speed5
+            // 
+            this.speed5.Enabled = true;
+            this.speed5.Interval = 1;
+            this.speed5.Tick += new System.EventHandler(this.Speed5_Tick);
+            // 
+            // speed6
+            // 
+            this.speed6.Enabled = true;
+            this.speed6.Interval = 1;
+            this.speed6.Tick += new System.EventHandler(this.Speed6_Tick);
+            // 
+            // speed7
+            // 
+            this.speed7.Enabled = true;
+            this.speed7.Interval = 1;
+            this.speed7.Tick += new System.EventHandler(this.Speed7_Tick);
+            // 
+            // speed8
+            // 
+            this.speed8.Enabled = true;
+            this.speed8.Interval = 1;
+            this.speed8.Tick += new System.EventHandler(this.Speed8_Tick);
+            // 
+            // speed9
+            // 
+            this.speed9.Enabled = true;
+            this.speed9.Interval = 1;
+            this.speed9.Tick += new System.EventHandler(this.Speed9_Tick);
             // 
             // Form1
             // 
@@ -204,6 +261,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(63)))));
             this.ClientSize = new System.Drawing.Size(1280, 1024);
+            this.Controls.Add(this.player_box);
             this.Controls.Add(this.pause_game);
             this.Controls.Add(this.score);
             this.Controls.Add(this.form_Closer);
@@ -212,7 +270,6 @@
             this.Controls.Add(this.enemy_6);
             this.Controls.Add(this.enemy_4);
             this.Controls.Add(this.enemy_2);
-            this.Controls.Add(this.player_box);
             this.Controls.Add(this.enemy_7);
             this.Controls.Add(this.enemy_3);
             this.Controls.Add(this.enemy_9);
@@ -255,6 +312,14 @@
         private System.Windows.Forms.Label score;
         private System.Windows.Forms.Label pause_game;
         private System.Windows.Forms.Timer speed1;
+        private System.Windows.Forms.Timer speed2;
+        private System.Windows.Forms.Timer speed3;
+        private System.Windows.Forms.Timer speed4;
+        private System.Windows.Forms.Timer speed5;
+        private System.Windows.Forms.Timer speed6;
+        private System.Windows.Forms.Timer speed7;
+        private System.Windows.Forms.Timer speed8;
+        private System.Windows.Forms.Timer speed9;
     }
 }
 
