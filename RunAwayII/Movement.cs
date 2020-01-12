@@ -10,16 +10,16 @@ namespace RunAwayII
     {
         public Random rnd = new Random();
 
-        public int max = 60;
+        public int max = 60;                            //Máximo e mínimo de velocidade
         public int min = 1;
 
-        public int y1 = 12;
-        public int spd1 = 1;
+        public int y1 = 12;                             //Altura inicial
+        public int spd1 = 1;                            //Velocidade inicial
         public int Spd_1
         {
             get
             {
-                if (y1 < 14)
+                if (y1 < 13)
                 {
                     spd1 = rnd.Next(min, max);
                 }
@@ -33,7 +33,7 @@ namespace RunAwayII
         {
             get
             {
-                if (y2 < 14)
+                if (y2 < 13)
                 {
                     spd2 = rnd.Next(min, max);
                 }
@@ -46,7 +46,7 @@ namespace RunAwayII
         {
             get
             {
-                if (y3 < 14)
+                if (y3 < 13)
                 {
                     spd3 = rnd.Next(min, max);
                 }
@@ -59,7 +59,7 @@ namespace RunAwayII
         {
             get
             {
-                if (y4 < 14)
+                if (y4 < 13)
                 {
                     spd4 = rnd.Next(min, max);
                 }
@@ -72,7 +72,7 @@ namespace RunAwayII
         {
             get
             {
-                if (y5 < 14)
+                if (y5 < 13)
                 {
                     spd5 = rnd.Next(min, max);
                 }
@@ -85,7 +85,7 @@ namespace RunAwayII
         {
             get
             {
-                if (y6 < 14)
+                if (y6 < 13)
                 {
                     spd6 = rnd.Next(min, max);
                 }
@@ -98,7 +98,7 @@ namespace RunAwayII
         {
             get
             {
-                if (y7 < 14)
+                if (y7 < 13)
                 {
                     spd7 = rnd.Next(min, max);
                 }
@@ -111,7 +111,7 @@ namespace RunAwayII
         {
             get
             {
-                if (y8 < 14)
+                if (y8 < 13)
                 {
                     spd8 = rnd.Next(min, max);
                 }
@@ -124,7 +124,7 @@ namespace RunAwayII
         {
             get
             {
-                if (y9 < 14)
+                if (y9 < 13)
                 {
                     spd9 = rnd.Next(min, max);
                 }
