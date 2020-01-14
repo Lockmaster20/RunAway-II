@@ -1,6 +1,6 @@
 ﻿namespace RunAwayII
 {
-    partial class Form1
+    partial class RunAwayII
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RunAwayII));
             this.score = new System.Windows.Forms.Label();
             this.pause_game = new System.Windows.Forms.Label();
             this.speed1 = new System.Windows.Forms.Timer(this.components);
@@ -89,7 +89,7 @@
             this.pause_game.Name = "pause_game";
             this.pause_game.Size = new System.Drawing.Size(100, 32);
             this.pause_game.TabIndex = 23;
-            this.pause_game.Text = "I I";
+            this.pause_game.Text = "II";
             this.pause_game.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.pause_game.Click += new System.EventHandler(this.pause);
             // 
@@ -151,7 +151,7 @@
             // 
             this.player_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(124)))), ((int)(((byte)(167)))));
             this.player_box.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("player_box.BackgroundImage")));
-            this.player_box.Location = new System.Drawing.Point(590, 890);
+            this.player_box.Location = new System.Drawing.Point(589, 890);
             this.player_box.Name = "player_box";
             this.player_box.Size = new System.Drawing.Size(100, 100);
             this.player_box.TabIndex = 16;
@@ -273,14 +273,13 @@
             this.loose.Interval = 1;
             this.loose.Tick += new System.EventHandler(this.loose_Tick);
             // 
-            // Form1
+            // RunAwayII
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(63)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 1024);
-            this.Controls.Add(this.player_box);
             this.Controls.Add(this.pause_game);
             this.Controls.Add(this.score);
             this.Controls.Add(this.form_Closer);
@@ -294,8 +293,9 @@
             this.Controls.Add(this.enemy_9);
             this.Controls.Add(this.enemy_5);
             this.Controls.Add(this.enemy_1);
+            this.Controls.Add(this.player_box);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "RunAwayII";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.player_box)).EndInit();

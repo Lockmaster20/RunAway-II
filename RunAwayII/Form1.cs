@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RunAwayII
 {
-    public partial class Form1 : Form
+    public partial class RunAwayII : Form
     {
-        public Form1()
+        public RunAwayII()
         {
             InitializeComponent();
             KeyDown += new KeyEventHandler(Form1_KeyDown);
@@ -39,15 +39,25 @@ namespace RunAwayII
 
         private void loose_Tick(object sender, EventArgs e)             //mudar código
         {
-            int s = Convert.ToInt32(score.Text);
-            if (player_box.Bounds.IntersectsWith(enemy_1.Bounds)) 
+            score.Text = pontos.ToString();
+
+            if (player_box.Bounds.IntersectsWith(enemy_1.Bounds) || player_box.Bounds.IntersectsWith(enemy_2.Bounds) || player_box.Bounds.IntersectsWith(enemy_3.Bounds) || player_box.Bounds.IntersectsWith(enemy_4.Bounds) || player_box.Bounds.IntersectsWith(enemy_5.Bounds) || player_box.Bounds.IntersectsWith(enemy_6.Bounds) || player_box.Bounds.IntersectsWith(enemy_7.Bounds) || player_box.Bounds.IntersectsWith(enemy_8.Bounds) || player_box.Bounds.IntersectsWith(enemy_9.Bounds)) 
             {
-                s += 100;
+                speed1.Enabled = false;
+                speed2.Enabled = false;
+                speed3.Enabled = false;
+                speed4.Enabled = false;
+                speed5.Enabled = false;
+                speed6.Enabled = false;
+                speed7.Enabled = false;
+                speed8.Enabled = false;
+                speed9.Enabled = false;
             }
-            score.Text = Convert.ToString(s);
         }
 
-        private int mov = 50;                                           //f:20, m:35, d:50
+        private int mov = 35;                                           //f:20, m:35, d:50
+
+        private int pontos = 0;
 
         private void pause(object sender, EventArgs e)                  
         {
@@ -68,7 +78,11 @@ namespace RunAwayII
             M.y1 = y;
             speed1.Interval = M.Spd_1;
             enemy_1.Location = new Point(14, y + mov);
-            if (y > 890) enemy_1.Location = new Point(14, 12);
+            if (y > 890)
+            {
+                enemy_1.Location = new Point(14, 12);
+                pontos += 1;
+            }
         }
 
         private void Speed2_Tick(object sender, EventArgs e)
@@ -77,7 +91,11 @@ namespace RunAwayII
             M.y2 = y;
             speed2.Interval = M.Spd_2;
             enemy_2.Location = new Point(158, y + mov);
-            if (y > 890) enemy_2.Location = new Point(158, 12);
+            if (y > 890)
+            {
+                enemy_2.Location = new Point(158, 12);
+                    pontos += 1;
+            }
         }
 
         private void Speed3_Tick(object sender, EventArgs e)
@@ -86,7 +104,11 @@ namespace RunAwayII
             M.y3 = y;
             speed3.Interval = M.Spd_3;
             enemy_3.Location = new Point(302, y + mov);
-            if (y > 890) enemy_3.Location = new Point(302, 12);
+            if (y > 890)
+            {
+                enemy_3.Location = new Point(302, 12);
+                        pontos += 1;
+            }
         }
 
         private void Speed4_Tick(object sender, EventArgs e)
@@ -95,7 +117,11 @@ namespace RunAwayII
             M.y4 = y;
             speed4.Interval = M.Spd_4;
             enemy_4.Location = new Point(446, y + mov);
-            if (y > 890) enemy_4.Location = new Point(446, 12);
+            if (y > 890)
+            {
+                enemy_4.Location = new Point(446, 12);
+                pontos += 1;
+            }
         }
 
         private void Speed5_Tick(object sender, EventArgs e)
@@ -104,7 +130,12 @@ namespace RunAwayII
             M.y5 = y;
             speed5.Interval = M.Spd_5;
             enemy_5.Location = new Point(590, y + mov);
-            if (y > 890) enemy_5.Location = new Point(590, 12);
+            if (y > 890)
+            {
+                enemy_5.Location = new Point(590, 12);
+                pontos += 1;
+                
+            }
         }
 
         private void Speed6_Tick(object sender, EventArgs e)
@@ -113,7 +144,11 @@ namespace RunAwayII
             M.y6 = y;
             speed6.Interval = M.Spd_6;
             enemy_6.Location = new Point(734, y + mov);
-            if (y > 890) enemy_6.Location = new Point(734, 12);
+            if (y > 890)
+            {
+                enemy_6.Location = new Point(734, 12);
+                pontos += 1;
+            }
         }
 
         private void Speed7_Tick(object sender, EventArgs e)
@@ -122,7 +157,12 @@ namespace RunAwayII
             M.y7 = y;
             speed7.Interval = M.Spd_7;
             enemy_7.Location = new Point(878, y + mov);
-            if (y > 890) enemy_7.Location = new Point(878, 12);
+            if (y > 890)
+            {
+                enemy_7.Location = new Point(878, 12);
+                pontos += 1;
+                
+            }
         }
 
         private void Speed8_Tick(object sender, EventArgs e)
@@ -131,7 +171,11 @@ namespace RunAwayII
             M.y8 = y;
             speed8.Interval = M.Spd_8;
             enemy_8.Location = new Point(1022, y + mov);
-            if (y > 890) enemy_8.Location = new Point(1022, 12);
+            if (y > 890)
+            {
+                enemy_8.Location = new Point(1022, 12);
+                pontos += 1;
+            }
         }
 
         private void Speed9_Tick(object sender, EventArgs e)
@@ -140,7 +184,11 @@ namespace RunAwayII
             M.y9 = y;
             speed9.Interval = M.Spd_9;
             enemy_9.Location = new Point(1166, y + mov);
-            if (y > 890) enemy_9.Location = new Point(1166, 12);
-        }   
+            if (y > 890)
+            {
+                enemy_9.Location = new Point(1166, 12);
+                pontos += 1;
+            }
+        }
     }
 }

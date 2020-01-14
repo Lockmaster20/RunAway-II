@@ -11,7 +11,7 @@ namespace RunAwayII
         public Random rnd = new Random();
 
         public int max = 60;
-        public int min = 10;
+        public int min = 15;
 
         public int y1 = 12;                             
         public int spd1 = 1;                            
