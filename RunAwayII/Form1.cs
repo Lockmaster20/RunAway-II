@@ -70,6 +70,17 @@ namespace RunAwayII
             if (speed7.Enabled == true) speed7.Enabled = false; else speed7.Enabled = true;
             if (speed8.Enabled == true) speed8.Enabled = false; else speed8.Enabled = true;
             if (speed9.Enabled == true) speed9.Enabled = false; else speed9.Enabled = true;
+            enemy_1.Location = new Point(14, 12);
+            enemy_2.Location = new Point(158, 12);
+            enemy_3.Location = new Point(302, 12);
+            enemy_4.Location = new Point(446, 12);
+            enemy_5.Location = new Point(590, 12);
+            enemy_6.Location = new Point(734, 12);
+            enemy_7.Location = new Point(878, 12);
+            enemy_8.Location = new Point(1022, 12);
+            enemy_9.Location = new Point(1166, 12);
+            player_box.Location = new Point(590,890);
+            pontos = 0; 
         }
 
         private void Speed1_Tick(object sender, EventArgs e)            
@@ -133,8 +144,7 @@ namespace RunAwayII
             if (y > 890)
             {
                 enemy_5.Location = new Point(590, 12);
-                pontos += 1;
-                
+                pontos += 1;                
             }
         }
 
@@ -161,7 +171,6 @@ namespace RunAwayII
             {
                 enemy_7.Location = new Point(878, 12);
                 pontos += 1;
-                
             }
         }
 

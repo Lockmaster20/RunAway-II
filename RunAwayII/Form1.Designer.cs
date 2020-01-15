@@ -151,7 +151,7 @@
             // 
             this.player_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(124)))), ((int)(((byte)(167)))));
             this.player_box.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("player_box.BackgroundImage")));
-            this.player_box.Location = new System.Drawing.Point(589, 890);
+            this.player_box.Location = new System.Drawing.Point(590, 890);
             this.player_box.Name = "player_box";
             this.player_box.Size = new System.Drawing.Size(100, 100);
             this.player_box.TabIndex = 16;
