@@ -27,6 +27,8 @@ namespace RunAwayII
         {
             int x = player_box.Location.X;
             if (e.KeyCode == Keys.Escape) this.Close();
+            if (e.KeyCode == Keys.P) pausing();
+            if (e.KeyCode == Keys.Space) start();
             if (speed1.Enabled == true)
             {
                 if (e.KeyCode == Keys.Right && x < 1166) x += 144;
@@ -35,31 +37,33 @@ namespace RunAwayII
             } 
         }
 
-        private Movement M = new Movement();
-
-        private void loose_Tick(object sender, EventArgs e)             //mudar código
+        void start()
         {
-            score.Text = pontos.ToString();
-
-            if (player_box.Bounds.IntersectsWith(enemy_1.Bounds) || player_box.Bounds.IntersectsWith(enemy_2.Bounds) || player_box.Bounds.IntersectsWith(enemy_3.Bounds) || player_box.Bounds.IntersectsWith(enemy_4.Bounds) || player_box.Bounds.IntersectsWith(enemy_5.Bounds) || player_box.Bounds.IntersectsWith(enemy_6.Bounds) || player_box.Bounds.IntersectsWith(enemy_7.Bounds) || player_box.Bounds.IntersectsWith(enemy_8.Bounds) || player_box.Bounds.IntersectsWith(enemy_9.Bounds)) 
-            {
-                speed1.Enabled = false;
-                speed2.Enabled = false;
-                speed3.Enabled = false;
-                speed4.Enabled = false;
-                speed5.Enabled = false;
-                speed6.Enabled = false;
-                speed7.Enabled = false;
-                speed8.Enabled = false;
-                speed9.Enabled = false;
-            }
+            speed1.Enabled = true;
+            speed2.Enabled = true;
+            speed3.Enabled = true;
+            speed4.Enabled = true;
+            speed5.Enabled = true;
+            speed6.Enabled = true;
+            speed7.Enabled = true;
+            speed8.Enabled = true;
+            speed9.Enabled = true;
         }
 
-        private int mov = 35;                                           //f:20, m:35, d:50
+        void stop()
+        {
+            speed1.Enabled = false;
+            speed2.Enabled = false;
+            speed3.Enabled = false;
+            speed4.Enabled = false;
+            speed5.Enabled = false;
+            speed6.Enabled = false;
+            speed7.Enabled = false;
+            speed8.Enabled = false;
+            speed9.Enabled = false;
+        }
 
-        private int pontos = 0;
-
-        private void pause(object sender, EventArgs e)                  
+        void pausing()
         {
             if (speed1.Enabled == true) speed1.Enabled = false; else speed1.Enabled = true;
             if (speed2.Enabled == true) speed2.Enabled = false; else speed2.Enabled = true;
@@ -70,6 +74,26 @@ namespace RunAwayII
             if (speed7.Enabled == true) speed7.Enabled = false; else speed7.Enabled = true;
             if (speed8.Enabled == true) speed8.Enabled = false; else speed8.Enabled = true;
             if (speed9.Enabled == true) speed9.Enabled = false; else speed9.Enabled = true;
+        }
+
+        private Movement M = new Movement();
+
+        private void loose_Tick(object sender, EventArgs e)             //mudar código
+        {
+            score.Text = pontos.ToString();
+
+            if (player_box.Bounds.IntersectsWith(enemy_1.Bounds) || player_box.Bounds.IntersectsWith(enemy_2.Bounds) || player_box.Bounds.IntersectsWith(enemy_3.Bounds) || player_box.Bounds.IntersectsWith(enemy_4.Bounds) || player_box.Bounds.IntersectsWith(enemy_5.Bounds) || player_box.Bounds.IntersectsWith(enemy_6.Bounds) || player_box.Bounds.IntersectsWith(enemy_7.Bounds) || player_box.Bounds.IntersectsWith(enemy_8.Bounds) || player_box.Bounds.IntersectsWith(enemy_9.Bounds)) 
+            {
+                stop();
+            }
+        }
+
+        private int mov = 35;                                           //f:20, m:35, d:50
+        private int pontos = 0;
+
+        private void pause(object sender, EventArgs e)                  
+        {
+            pausing();
             enemy_1.Location = new Point(14, 12);
             enemy_2.Location = new Point(158, 12);
             enemy_3.Location = new Point(302, 12);
