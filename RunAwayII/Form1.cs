@@ -29,6 +29,7 @@ namespace RunAwayII
             if (e.KeyCode == Keys.Escape) this.Close();
             if (e.KeyCode == Keys.P) pausing();
             if (e.KeyCode == Keys.Space) start();
+            if (e.KeyCode == Keys.R) reset();
             if (speed1.Enabled == true)
             {
                 if (e.KeyCode == Keys.Right && x < 1166) x += 144;
@@ -76,6 +77,22 @@ namespace RunAwayII
             if (speed9.Enabled == true) speed9.Enabled = false; else speed9.Enabled = true;
         }
 
+        void reset()
+        {
+            enemy_1.Location = new Point(14, 12);
+            enemy_2.Location = new Point(158, 12);
+            enemy_3.Location = new Point(302, 12);
+            enemy_4.Location = new Point(446, 12);
+            enemy_5.Location = new Point(590, 12);
+            enemy_6.Location = new Point(734, 12);
+            enemy_7.Location = new Point(878, 12);
+            enemy_8.Location = new Point(1022, 12);
+            enemy_9.Location = new Point(1166, 12);
+            player_box.Location = new Point(590, 890);
+            pontos = 0;
+            stop();
+        }
+
         private Movement M = new Movement();
 
         private void loose_Tick(object sender, EventArgs e)             //mudar código
@@ -94,17 +111,6 @@ namespace RunAwayII
         private void pause(object sender, EventArgs e)                  
         {
             pausing();
-            enemy_1.Location = new Point(14, 12);
-            enemy_2.Location = new Point(158, 12);
-            enemy_3.Location = new Point(302, 12);
-            enemy_4.Location = new Point(446, 12);
-            enemy_5.Location = new Point(590, 12);
-            enemy_6.Location = new Point(734, 12);
-            enemy_7.Location = new Point(878, 12);
-            enemy_8.Location = new Point(1022, 12);
-            enemy_9.Location = new Point(1166, 12);
-            player_box.Location = new Point(590,890);
-            pontos = 0; 
         }
 
         private void Speed1_Tick(object sender, EventArgs e)            
