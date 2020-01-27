@@ -23,12 +23,26 @@ namespace RunAwayII
             this.Close();
         }
 
-        void Form1_KeyDown(object sender, KeyEventArgs e)               
+        private Time T = new Time();
+        void Master_Tick(object sender, EventArgs e)
+        {
+            speed1.Enabled = T.t1;
+            speed2.Enabled = T.t2;
+            speed3.Enabled = T.t3;
+            speed4.Enabled = T.t4;
+            speed5.Enabled = T.t5;
+            speed6.Enabled = T.t6;
+            speed7.Enabled = T.t7;
+            speed8.Enabled = T.t8;
+            speed9.Enabled = T.t9;
+        }
+
+        public void Form1_KeyDown(object sender, KeyEventArgs e)               
         {
             int x = player_box.Location.X;
             if (e.KeyCode == Keys.Escape) this.Close();
-            if (e.KeyCode == Keys.P) pausing();
-            if (e.KeyCode == Keys.Space) start();
+            if (e.KeyCode == Keys.P) T.pausing();
+            if (e.KeyCode == Keys.Space) T.start();
             if (e.KeyCode == Keys.R) reset();
             if (mov > 0 && speed1.Enabled == false) if (e.KeyCode == Keys.M) menu();
             if (speed1.Enabled == true)
@@ -38,46 +52,7 @@ namespace RunAwayII
                 player_box.Location = new Point(x, 890);
             } 
         }
-
-        void start()
-        {
-            speed1.Enabled = true;
-            speed2.Enabled = true;
-            speed3.Enabled = true;
-            speed4.Enabled = true;
-            speed5.Enabled = true;
-            speed6.Enabled = true;
-            speed7.Enabled = true;
-            speed8.Enabled = true;
-            speed9.Enabled = true;
-        }
-
-        void stop()
-        {
-            speed1.Enabled = false;
-            speed2.Enabled = false;
-            speed3.Enabled = false;
-            speed4.Enabled = false;
-            speed5.Enabled = false;
-            speed6.Enabled = false;
-            speed7.Enabled = false;
-            speed8.Enabled = false;
-            speed9.Enabled = false;
-        }
-
-        void pausing()
-        {
-            if (speed1.Enabled == true) speed1.Enabled = false; else speed1.Enabled = true;
-            if (speed2.Enabled == true) speed2.Enabled = false; else speed2.Enabled = true;
-            if (speed3.Enabled == true) speed3.Enabled = false; else speed3.Enabled = true;
-            if (speed4.Enabled == true) speed4.Enabled = false; else speed4.Enabled = true;
-            if (speed5.Enabled == true) speed5.Enabled = false; else speed5.Enabled = true;
-            if (speed6.Enabled == true) speed6.Enabled = false; else speed6.Enabled = true;
-            if (speed7.Enabled == true) speed7.Enabled = false; else speed7.Enabled = true;
-            if (speed8.Enabled == true) speed8.Enabled = false; else speed8.Enabled = true;
-            if (speed9.Enabled == true) speed9.Enabled = false; else speed9.Enabled = true;
-        }
-
+        
         void reset()
         {
             enemy_1.Location = new Point(14, 12);
@@ -91,18 +66,15 @@ namespace RunAwayII
             enemy_9.Location = new Point(1166, 12);
             player_box.Location = new Point(590, 890);
             pontos = 0;
-            stop();
+            T.stop();
         }
 
-        private Movement M = new Movement();
-
-        private void loose_Tick(object sender, EventArgs e)
+        void loose_Tick(object sender, EventArgs e)
         {
             score.Text = pontos.ToString();
-
             if (player_box.Bounds.IntersectsWith(enemy_1.Bounds) || player_box.Bounds.IntersectsWith(enemy_2.Bounds) || player_box.Bounds.IntersectsWith(enemy_3.Bounds) || player_box.Bounds.IntersectsWith(enemy_4.Bounds) || player_box.Bounds.IntersectsWith(enemy_5.Bounds) || player_box.Bounds.IntersectsWith(enemy_6.Bounds) || player_box.Bounds.IntersectsWith(enemy_7.Bounds) || player_box.Bounds.IntersectsWith(enemy_8.Bounds) || player_box.Bounds.IntersectsWith(enemy_9.Bounds)) 
             {
-                stop();
+                T.stop();
             }
         }
 
@@ -114,7 +86,7 @@ namespace RunAwayII
             if (help.Visible == true) help.Visible = false; else help.Visible = true;
         }
 
-        private int mov = 0;                                           //f:25, m:35, d:50
+        private int mov = 0;
         private int pontos = 0;
         private int bit = 0;
 
@@ -142,12 +114,13 @@ namespace RunAwayII
             reset();
         }
 
-        private void pause(object sender, EventArgs e)                  
+        void pause(object sender, EventArgs e)
         {
-            pausing();
+            T.pausing();
         }
 
-        private void Speed1_Tick(object sender, EventArgs e)            
+        private Movement M = new Movement();
+        private void Speed1_Tick(object sender, EventArgs e)
         {
             int y = enemy_1.Location.Y;
             M.y1 = y;
@@ -266,7 +239,6 @@ namespace RunAwayII
 
         private void Help_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

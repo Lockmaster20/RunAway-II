@@ -59,6 +59,7 @@
             this.enemy_5 = new System.Windows.Forms.PictureBox();
             this.enemy_1 = new System.Windows.Forms.PictureBox();
             this.player_box = new System.Windows.Forms.PictureBox();
+            this.Master = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.brand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.form_Closer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskbar)).BeginInit();
@@ -340,6 +341,12 @@
             this.player_box.TabIndex = 16;
             this.player_box.TabStop = false;
             // 
+            // Master
+            // 
+            this.Master.Enabled = true;
+            this.Master.Interval = 1;
+            this.Master.Tick += new System.EventHandler(this.Master_Tick);
+            // 
             // RunAwayII
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,6 +411,11 @@
         private System.Windows.Forms.PictureBox taskbar;
         private System.Windows.Forms.Label score;
         private System.Windows.Forms.Label pause_game;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label help;
+        private System.Windows.Forms.PictureBox brand;
         private System.Windows.Forms.Timer speed1;
         private System.Windows.Forms.Timer speed2;
         private System.Windows.Forms.Timer speed3;
@@ -414,11 +426,7 @@
         private System.Windows.Forms.Timer speed8;
         private System.Windows.Forms.Timer speed9;
         private System.Windows.Forms.Timer loose;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label help;
-        private System.Windows.Forms.PictureBox brand;
+        private System.Windows.Forms.Timer Master;
     }
 }
 
