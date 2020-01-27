@@ -30,6 +30,7 @@ namespace RunAwayII
             if (e.KeyCode == Keys.P) pausing();
             if (e.KeyCode == Keys.Space) start();
             if (e.KeyCode == Keys.R) reset();
+            if (mov > 0 && speed1.Enabled == false) if (e.KeyCode == Keys.M) menu();
             if (speed1.Enabled == true)
             {
                 if (e.KeyCode == Keys.Right && x < 1166) x += 144;
@@ -95,7 +96,7 @@ namespace RunAwayII
 
         private Movement M = new Movement();
 
-        private void loose_Tick(object sender, EventArgs e)             //mudar código
+        private void loose_Tick(object sender, EventArgs e)
         {
             score.Text = pontos.ToString();
 
@@ -105,8 +106,41 @@ namespace RunAwayII
             }
         }
 
-        private int mov = 35;                                           //f:20, m:35, d:50
+        void menu()
+        {
+            if (label1.Visible == true) label1.Visible = false; else label1.Visible = true;
+            if (label2.Visible == true) label2.Visible = false; else label2.Visible = true;
+            if (label3.Visible == true) label3.Visible = false; else label3.Visible = true;
+            if (help.Visible == true) help.Visible = false; else help.Visible = true;
+        }
+
+        private int mov = 0;                                           //f:25, m:35, d:50
         private int pontos = 0;
+        private int bit = 0;
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+            mov = 25;
+            bit = 1;
+            menu();
+            reset();
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+            mov = 35;
+            bit = 2;
+            menu();
+            reset();
+        }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+            mov = 50;
+            bit = 3;
+            menu();
+            reset();
+        }
 
         private void pause(object sender, EventArgs e)                  
         {
@@ -122,7 +156,7 @@ namespace RunAwayII
             if (y > 890)
             {
                 enemy_1.Location = new Point(14, 12);
-                pontos += 1;
+                pontos += bit;
             }
         }
 
@@ -135,7 +169,7 @@ namespace RunAwayII
             if (y > 890)
             {
                 enemy_2.Location = new Point(158, 12);
-                    pontos += 1;
+                pontos += bit;
             }
         }
 
@@ -148,7 +182,7 @@ namespace RunAwayII
             if (y > 890)
             {
                 enemy_3.Location = new Point(302, 12);
-                        pontos += 1;
+                pontos += bit;
             }
         }
 
@@ -161,7 +195,7 @@ namespace RunAwayII
             if (y > 890)
             {
                 enemy_4.Location = new Point(446, 12);
-                pontos += 1;
+                pontos += bit;
             }
         }
 
@@ -174,7 +208,7 @@ namespace RunAwayII
             if (y > 890)
             {
                 enemy_5.Location = new Point(590, 12);
-                pontos += 1;                
+                pontos += bit;                
             }
         }
 
@@ -187,7 +221,7 @@ namespace RunAwayII
             if (y > 890)
             {
                 enemy_6.Location = new Point(734, 12);
-                pontos += 1;
+                pontos += bit;
             }
         }
 
@@ -200,7 +234,7 @@ namespace RunAwayII
             if (y > 890)
             {
                 enemy_7.Location = new Point(878, 12);
-                pontos += 1;
+                pontos += bit;
             }
         }
 
@@ -213,7 +247,7 @@ namespace RunAwayII
             if (y > 890)
             {
                 enemy_8.Location = new Point(1022, 12);
-                pontos += 1;
+                pontos += bit;
             }
         }
 
@@ -226,8 +260,13 @@ namespace RunAwayII
             if (y > 890)
             {
                 enemy_9.Location = new Point(1166, 12);
-                pontos += 1;
+                pontos += bit;
             }
+        }
+
+        private void Help_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

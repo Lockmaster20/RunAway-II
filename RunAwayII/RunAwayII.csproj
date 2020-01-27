@@ -81,12 +81,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\RA_II_player.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RA_II_enemy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RAR.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brand.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

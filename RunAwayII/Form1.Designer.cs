@@ -41,7 +41,12 @@
             this.speed7 = new System.Windows.Forms.Timer(this.components);
             this.speed8 = new System.Windows.Forms.Timer(this.components);
             this.speed9 = new System.Windows.Forms.Timer(this.components);
-            this.player_box = new System.Windows.Forms.PictureBox();
+            this.loose = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.help = new System.Windows.Forms.Label();
+            this.brand = new System.Windows.Forms.PictureBox();
             this.form_Closer = new System.Windows.Forms.PictureBox();
             this.taskbar = new System.Windows.Forms.PictureBox();
             this.enemy_8 = new System.Windows.Forms.PictureBox();
@@ -53,8 +58,8 @@
             this.enemy_9 = new System.Windows.Forms.PictureBox();
             this.enemy_5 = new System.Windows.Forms.PictureBox();
             this.enemy_1 = new System.Windows.Forms.PictureBox();
-            this.loose = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.player_box)).BeginInit();
+            this.player_box = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.brand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.form_Closer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy_8)).BeginInit();
@@ -66,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.enemy_9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy_5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player_box)).BeginInit();
             this.SuspendLayout();
             // 
             // score
@@ -95,67 +101,124 @@
             // 
             // speed1
             // 
-            this.speed1.Enabled = true;
             this.speed1.Interval = 1;
             this.speed1.Tick += new System.EventHandler(this.Speed1_Tick);
             // 
             // speed2
             // 
-            this.speed2.Enabled = true;
             this.speed2.Interval = 1;
             this.speed2.Tick += new System.EventHandler(this.Speed2_Tick);
             // 
             // speed3
             // 
-            this.speed3.Enabled = true;
             this.speed3.Interval = 1;
             this.speed3.Tick += new System.EventHandler(this.Speed3_Tick);
             // 
             // speed4
             // 
-            this.speed4.Enabled = true;
             this.speed4.Interval = 1;
             this.speed4.Tick += new System.EventHandler(this.Speed4_Tick);
             // 
             // speed5
             // 
-            this.speed5.Enabled = true;
             this.speed5.Interval = 1;
             this.speed5.Tick += new System.EventHandler(this.Speed5_Tick);
             // 
             // speed6
             // 
-            this.speed6.Enabled = true;
             this.speed6.Interval = 1;
             this.speed6.Tick += new System.EventHandler(this.Speed6_Tick);
             // 
             // speed7
             // 
-            this.speed7.Enabled = true;
             this.speed7.Interval = 1;
             this.speed7.Tick += new System.EventHandler(this.Speed7_Tick);
             // 
             // speed8
             // 
-            this.speed8.Enabled = true;
             this.speed8.Interval = 1;
             this.speed8.Tick += new System.EventHandler(this.Speed8_Tick);
             // 
             // speed9
             // 
-            this.speed9.Enabled = true;
             this.speed9.Interval = 1;
             this.speed9.Tick += new System.EventHandler(this.Speed9_Tick);
             // 
-            // player_box
+            // loose
             // 
-            this.player_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(124)))), ((int)(((byte)(167)))));
-            this.player_box.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("player_box.BackgroundImage")));
-            this.player_box.Location = new System.Drawing.Point(590, 890);
-            this.player_box.Name = "player_box";
-            this.player_box.Size = new System.Drawing.Size(100, 100);
-            this.player_box.TabIndex = 16;
-            this.player_box.TabStop = false;
+            this.loose.Enabled = true;
+            this.loose.Interval = 1;
+            this.loose.Tick += new System.EventHandler(this.loose_Tick);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(73)))));
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Consolas", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.Location = new System.Drawing.Point(329, 515);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(200, 100);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "FÁCIL";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(73)))));
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Consolas", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.Location = new System.Drawing.Point(540, 515);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(200, 100);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "NORMAL";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(73)))));
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Font = new System.Drawing.Font("Consolas", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label3.Location = new System.Drawing.Point(750, 515);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(200, 100);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "DIFÍCIL";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
+            // 
+            // help
+            // 
+            this.help.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(112)))), ((int)(((byte)(123)))));
+            this.help.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.help.Cursor = System.Windows.Forms.Cursors.Help;
+            this.help.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.help.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.help.Location = new System.Drawing.Point(574, 650);
+            this.help.Name = "help";
+            this.help.Size = new System.Drawing.Size(132, 69);
+            this.help.TabIndex = 31;
+            this.help.Text = "AJUDA";
+            this.help.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.help.Click += new System.EventHandler(this.Help_Click);
+            // 
+            // brand
+            // 
+            this.brand.BackColor = System.Drawing.Color.Transparent;
+            this.brand.BackgroundImage = global::RunAwayII.Properties.Resources.brand;
+            this.brand.Location = new System.Drawing.Point(253, 265);
+            this.brand.Name = "brand";
+            this.brand.Size = new System.Drawing.Size(775, 200);
+            this.brand.TabIndex = 32;
+            this.brand.TabStop = false;
             // 
             // form_Closer
             // 
@@ -267,11 +330,15 @@
             this.enemy_1.TabIndex = 1;
             this.enemy_1.TabStop = false;
             // 
-            // loose
+            // player_box
             // 
-            this.loose.Enabled = true;
-            this.loose.Interval = 1;
-            this.loose.Tick += new System.EventHandler(this.loose_Tick);
+            this.player_box.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(124)))), ((int)(((byte)(167)))));
+            this.player_box.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("player_box.BackgroundImage")));
+            this.player_box.Location = new System.Drawing.Point(590, 890);
+            this.player_box.Name = "player_box";
+            this.player_box.Size = new System.Drawing.Size(100, 100);
+            this.player_box.TabIndex = 16;
+            this.player_box.TabStop = false;
             // 
             // RunAwayII
             // 
@@ -280,6 +347,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(63)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 1024);
+            this.Controls.Add(this.help);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pause_game);
             this.Controls.Add(this.score);
             this.Controls.Add(this.form_Closer);
@@ -294,11 +365,13 @@
             this.Controls.Add(this.enemy_5);
             this.Controls.Add(this.enemy_1);
             this.Controls.Add(this.player_box);
+            this.Controls.Add(this.brand);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RunAwayII";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.player_box)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brand)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.form_Closer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskbar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy_8)).EndInit();
@@ -310,6 +383,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.enemy_9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy_5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player_box)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -340,6 +414,11 @@
         private System.Windows.Forms.Timer speed8;
         private System.Windows.Forms.Timer speed9;
         private System.Windows.Forms.Timer loose;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label help;
+        private System.Windows.Forms.PictureBox brand;
     }
 }
 
