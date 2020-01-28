@@ -60,6 +60,7 @@
             this.enemy_1 = new System.Windows.Forms.PictureBox();
             this.player_box = new System.Windows.Forms.PictureBox();
             this.Master = new System.Windows.Forms.Timer(this.components);
+            this.Sound_Box = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.brand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.form_Closer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskbar)).BeginInit();
@@ -73,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.enemy_5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player_box)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sound_Box)).BeginInit();
             this.SuspendLayout();
             // 
             // score
@@ -94,7 +96,7 @@
             this.pause_game.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pause_game.Location = new System.Drawing.Point(590, 990);
             this.pause_game.Name = "pause_game";
-            this.pause_game.Size = new System.Drawing.Size(100, 32);
+            this.pause_game.Size = new System.Drawing.Size(100, 34);
             this.pause_game.TabIndex = 23;
             this.pause_game.Text = "II";
             this.pause_game.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -347,6 +349,17 @@
             this.Master.Interval = 1;
             this.Master.Tick += new System.EventHandler(this.Master_Tick);
             // 
+            // Sound_Box
+            // 
+            this.Sound_Box.BackColor = System.Drawing.Color.Crimson;
+            this.Sound_Box.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Sound_Box.Location = new System.Drawing.Point(187, 990);
+            this.Sound_Box.Name = "Sound_Box";
+            this.Sound_Box.Size = new System.Drawing.Size(34, 34);
+            this.Sound_Box.TabIndex = 33;
+            this.Sound_Box.TabStop = false;
+            this.Sound_Box.Click += new System.EventHandler(this.som);
+            // 
             // RunAwayII
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,6 +367,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(52)))), ((int)(((byte)(63)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 1024);
+            this.Controls.Add(this.Sound_Box);
             this.Controls.Add(this.help);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -391,6 +405,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.enemy_5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player_box)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sound_Box)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -427,6 +442,7 @@
         private System.Windows.Forms.Timer speed9;
         private System.Windows.Forms.Timer loose;
         private System.Windows.Forms.Timer Master;
+        public System.Windows.Forms.PictureBox Sound_Box;
     }
 }
 

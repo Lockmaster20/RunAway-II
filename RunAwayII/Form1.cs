@@ -23,6 +23,7 @@ namespace RunAwayII
             this.Close();
         }
 
+
         private Time T = new Time();
         void Master_Tick(object sender, EventArgs e)
         {
@@ -37,13 +38,14 @@ namespace RunAwayII
             speed9.Enabled = T.t9;
         }
 
-        public void Form1_KeyDown(object sender, KeyEventArgs e)               
+        public void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             int x = player_box.Location.X;
             if (e.KeyCode == Keys.Escape) this.Close();
             if (e.KeyCode == Keys.P) T.pausing();
             if (e.KeyCode == Keys.Space) T.start();
             if (e.KeyCode == Keys.R) reset();
+            if (e.KeyCode == Keys.S) music();
             if (mov > 0 && speed1.Enabled == false) if (e.KeyCode == Keys.M) menu();
             if (speed1.Enabled == true)
             {
@@ -89,6 +91,7 @@ namespace RunAwayII
         private int mov = 0;
         private int pontos = 0;
         private int bit = 0;
+        private bool on = false;
 
         private void Label1_Click(object sender, EventArgs e)
         {
@@ -239,6 +242,19 @@ namespace RunAwayII
 
         private void Help_Click(object sender, EventArgs e)
         {
+        }
+
+        void music()
+        {
+            System.IO.Stream str = Properties.Resources.dance;
+            System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
+            if (on == false) { snd.Play(); on = true; Sound_Box.BackColor = Color.Lime; }
+            else { snd.Stop(); on = false; Sound_Box.BackColor = Color.Crimson; }
+        }
+
+        private void som(object sender, EventArgs e)
+        {
+            music();
         }
     }
 }

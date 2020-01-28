@@ -94,5 +94,14 @@
   <ItemGroup>
     <None Include="Resources\brand.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dance.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\muted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unmuted.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
