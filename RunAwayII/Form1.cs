@@ -23,7 +23,6 @@ namespace RunAwayII
             this.Close();
         }
 
-
         private Time T = new Time();
         void Master_Tick(object sender, EventArgs e)
         {
@@ -44,8 +43,8 @@ namespace RunAwayII
             if (e.KeyCode == Keys.Escape) this.Close();
             if (e.KeyCode == Keys.P) T.pausing();
             if (e.KeyCode == Keys.Space) T.start();
-            if (e.KeyCode == Keys.R) reset();
             if (e.KeyCode == Keys.S) music();
+            if (mov > 0 && speed1.Enabled == false) if (e.KeyCode == Keys.R) reset();
             if (mov > 0 && speed1.Enabled == false) if (e.KeyCode == Keys.M) menu();
             if (speed1.Enabled == true)
             {
@@ -57,6 +56,7 @@ namespace RunAwayII
         
         void reset()
         {
+            T.stop();
             enemy_1.Location = new Point(14, 12);
             enemy_2.Location = new Point(158, 12);
             enemy_3.Location = new Point(302, 12);
@@ -68,7 +68,6 @@ namespace RunAwayII
             enemy_9.Location = new Point(1166, 12);
             player_box.Location = new Point(590, 890);
             pontos = 0;
-            T.stop();
         }
 
         void loose_Tick(object sender, EventArgs e)
@@ -244,7 +243,7 @@ namespace RunAwayII
         {
         }
 
-        void music()
+        public void music()
         {
             System.IO.Stream str = Properties.Resources.dance;
             System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);

@@ -353,6 +353,7 @@
             // 
             this.Sound_Box.BackColor = System.Drawing.Color.Crimson;
             this.Sound_Box.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Sound_Box.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Sound_Box.Location = new System.Drawing.Point(187, 990);
             this.Sound_Box.Name = "Sound_Box";
             this.Sound_Box.Size = new System.Drawing.Size(34, 34);
