@@ -247,7 +247,7 @@ namespace RunAwayII
         {
             System.IO.Stream str = Properties.Resources.dance;
             System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
-            if (on == false) { snd.Play(); on = true; Sound_Box.BackColor = Color.Lime; }
+            if (on == false) { snd.PlayLooping(); on = true; Sound_Box.BackColor = Color.Lime; }
             else { snd.Stop(); on = false; Sound_Box.BackColor = Color.Crimson; }
         }
 
