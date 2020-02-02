@@ -239,8 +239,10 @@ namespace RunAwayII
             }
         }
 
+        //private const string sHTMLHelpFileName = "Ajuda.chm";
         private void Help_Click(object sender, EventArgs e)
         {
+            //System.Windows.Forms.Help.ShowHelp(this, Application.StartupPath + @"\" + sHTMLHelpFileName);
         }
 
         public void music()

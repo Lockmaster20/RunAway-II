@@ -83,6 +83,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Ajuda.chm" />
     <None Include="Resources\RA_II_player.png" />
   </ItemGroup>
   <ItemGroup>
