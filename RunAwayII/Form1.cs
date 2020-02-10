@@ -241,7 +241,7 @@ namespace RunAwayII
 
         private void Help_Click(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, "C:\\Users\\Utilizador\\source\\repos\\RunAway-II\\RunAwayII\\Resources\\Ajuda.chm");
+            Help.ShowHelp(this, Application.StartupPath + "\\Resources\\Ajuda.chm");
         }
 
         public void music()
